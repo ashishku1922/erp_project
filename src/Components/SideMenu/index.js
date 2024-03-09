@@ -31,7 +31,7 @@ function SideMenu() {
         mode="vertical"
         style={{
           width: "100%",
-          backgroundColor: "white",
+          background: "#333333", // Change background color to grey
         }}
         onClick={(item) => {
           navigate(item.key);
@@ -41,35 +41,35 @@ function SideMenu() {
         <Menu.Item
           key="/"
           icon={<AppstoreOutlined />}
-          style={{  marginBottom: "12px", fontSize: "18px" }}
+          style={{ marginTop: "1px", marginBottom: "12px", fontSize: "18px", color: 'white', backgroundColor: selectedKeys === "/" ? 'black' : 'transparent' }} // Change color to white
         >
           Dashboard
         </Menu.Item>
         <Menu.Item
           key="/inventory"
           icon={<ShopOutlined />}
-          style={{ marginBottom: "12px", fontSize: "18px" }}
+          style={{ marginBottom: "12px", fontSize: "18px", color: 'white', backgroundColor: selectedKeys === "/inventory" ? 'black' : 'transparent' }} // Change color to white
         >
-          Inventory
+          Products
         </Menu.Item>
         <Menu.Item
           key="/orders"
           icon={<ShoppingCartOutlined />}
-          style={{ marginBottom: "12px", fontSize: "18px" }}
+          style={{ marginBottom: "12px", fontSize: "18px", color: 'white', backgroundColor: selectedKeys === "/orders" ? 'black' : 'transparent' }} // Change color to white
         >
           Orders
         </Menu.Item>
         <Menu.Item
           key="/customers"
           icon={<UserOutlined />}
-          style={{ marginBottom: "12px", fontSize: "18px" }}
+          style={{ marginBottom: "12px", fontSize: "18px", color: 'white', backgroundColor: selectedKeys === "/customers" ? 'black' : 'transparent' }} // Change color to white
         >
           Customers
         </Menu.Item>
         <Menu.Item
           key="/calenders"
           icon={<CalendarOutlined />}
-          style={{ marginBottom: "12px", fontSize: "18px" }}
+          style={{ marginBottom: "12px", fontSize: "18px" ,color: 'white',backgroundColor: selectedKeys === "/calenders" ? 'black' : 'transparent' }}
         >
           Orders Calender
         </Menu.Item>
@@ -78,4 +78,3 @@ function SideMenu() {
   );
 }
 export default SideMenu;
-

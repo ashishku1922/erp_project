@@ -1,5 +1,3 @@
-// src/CalendarView.js
-
 import React, { useEffect, useState } from 'react';
 import { Calendar, momentLocalizer } from 'react-big-calendar';
 import moment from 'moment';
@@ -9,20 +7,30 @@ import { getOrders } from '../../API';
 function CalendarView() {
   const [events, setEvents] = useState([]);
   const localizer = momentLocalizer(moment);
+  const [selectedDateOrders, setSelectedDateOrders] = useState([]);
 
   useEffect(() => {
     getOrders().then((res) => {
-      const orders = res.products.map((order) => ({
+      const orders = res.products.map((order, index) => ({
         id: order.id,
         title: `Order#${order.id}`,
-        start: new Date(order.expectedDeliveryDate),
-        end: new Date(order.expectedDeliveryDate),
+        start: generateDeliveryDate(index), // Generate delivery date based on index
+        end: generateDeliveryDate(index), // Generate delivery date based on index
         orderDetails: order, // Include the entire order details for each event
       }));
 
       setEvents(orders);
     });
   }, []);
+
+  // Function to generate delivery date based on index
+  const generateDeliveryDate = (index) => {
+    const currentDate = new Date();
+    const year = currentDate.getFullYear();
+    const month = currentDate.getMonth();
+    const day = currentDate.getDate() + index; // Increment day based on index
+    return new Date(year, month, day);
+  };
 
   const handleSelectEvent = (event) => {
     console.log('Selected event:', event);
@@ -31,17 +39,17 @@ function CalendarView() {
   };
 
   const handleSelectSlot = (slotInfo) => {
+    const selectedDate = slotInfo.start; // Get the selected date from the slot
     // Filter orders for the selected date
-    const selectedDateOrders = events.filter((event) =>
-      moment(event.start).isSame(slotInfo.start, 'day')
+    const ordersForSelectedDate = events.filter((event) =>
+      moment(event.start).isSame(selectedDate, 'day')
     );
-    console.log('Orders for selected date:', selectedDateOrders);
-    // Handle displaying the orders for the selected date (e.g., open a modal)
+    setSelectedDateOrders(ordersForSelectedDate);
   };
 
   return (
-    <div style={{ height: '500px' , marginLeft: '320px' }}>
-      <h2>DELIVERY CALENDER</h2>
+    <div style={{ height: '500px', marginLeft: '320px' }}>
+      <h2>DELIVERY CALENDAR</h2>
       <Calendar
         localizer={localizer}
         events={events}
@@ -57,6 +65,13 @@ function CalendarView() {
         onSelectEvent={handleSelectEvent}
         onSelectSlot={handleSelectSlot}
       />
+      <div>
+        <ul>
+          {selectedDateOrders.map((order) => (
+            <li key={order.id}>{order.title}</li>
+          ))}
+        </ul>
+      </div>
     </div>
   );
 }

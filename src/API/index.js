@@ -1,7 +1,5 @@
-import ordersData from './Orders.json';
-
 export const getOrders = () => {
-  return Promise.resolve(ordersData);
+  return fetch("https://dummyjson.com/carts/1").then((res) => res.json());
 };
 
 export const getRevenue = () => {

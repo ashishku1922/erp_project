@@ -14,7 +14,9 @@ function AppHeader() {
 
   return (
     <div className="AppHeader" style={{ 
-      backgroundColor: "white",
+      background: "#333333",
+
+
       display: 'flex',
       alignItems: 'center',
       justifyContent: 'center',
@@ -27,9 +29,10 @@ function AppHeader() {
         alt="Logo"
         width={40}
       />
-      <Typography.Title style={{ fontFamily: 'Montserrat', fontSize: '37px', margin: '0 20px' }}>
-        Admin Dashboard
-      </Typography.Title>
+      <Typography.Title style={{ fontFamily: 'Montserrat', fontSize: '37px', margin: '0 20px', color: 'white' }}>
+  Admin Dashboard
+</Typography.Title>
+
       
     </div>
   );

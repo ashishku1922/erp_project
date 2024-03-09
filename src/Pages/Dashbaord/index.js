@@ -28,7 +28,6 @@ ChartJS.register(
   Legend
 );
 
-
 function Dashboard() {
   const [orders, setOrders] = useState(0);
   const [inventory, setInventory] = useState(0);
@@ -49,10 +48,12 @@ function Dashboard() {
   }, []);
 
   return (
-    <div style={{
-      background: ' linear-gradient(174.2deg,  rgba(255,244,228,1) 7.1%, rgba(240,246,238,1) 67.4%)', 
-      padding: '10px 100px 55px 45px',/* Top, Right, Bottom, Left padding */
-    }}>
+    <div
+      style={{
+        background: "white",
+        padding: "10px 100px 55px 45px", // Top, Right, Bottom, Left padding
+      }}
+    >
       <Space size={15} direction="vertical">
         <Typography.Title level={4}>DASHBOARD</Typography.Title>
         <Space direction="horizontal" size={50}>
@@ -61,7 +62,7 @@ function Dashboard() {
               <ShoppingCartOutlined
                 style={{
                   color: "green",
-                  backgroundColor: "rgba(0,255,0,0.25)",
+                  backgroundColor: "black",
                   borderRadius: 20,
                   fontSize: 50,
                   padding: 15,
@@ -70,13 +71,20 @@ function Dashboard() {
             }
             title={"Orders"}
             value={orders}
+            backgroundStyle={{
+              background: "WHITE",
+              color: 'white',
+            }}
+            titleStyle={{
+              color: 'white',
+            }}
           />
           <DashboardCard
             icon={
               <ShoppingOutlined
                 style={{
                   color: "blue",
-                  backgroundColor: "rgba(0,0,255,0.25)",
+                  backgroundColor: "black",
                   borderRadius: 20,
                   fontSize: 50,
                   padding: 15,
@@ -85,13 +93,20 @@ function Dashboard() {
             }
             title={"Inventory"}
             value={inventory}
+            backgroundStyle={{
+              background: "WHITE",
+              color: 'white',
+            }}
+            titleStyle={{
+              color: 'white',
+            }}
           />
           <DashboardCard
             icon={
               <UserOutlined
                 style={{
                   color: "purple",
-                  backgroundColor: "rgba(0,255,255,0.25)",
+                  backgroundColor: "black",
                   borderRadius: 20,
                   fontSize: 50,
                   padding: 15,
@@ -100,13 +115,20 @@ function Dashboard() {
             }
             title={"Customer"}
             value={customers}
+            backgroundStyle={{
+              background: "WHITE",
+              color: 'white',
+            }}
+            titleStyle={{
+              color: 'white',
+            }}
           />
           <DashboardCard
             icon={
               <DollarCircleOutlined
                 style={{
                   color: "red",
-                  backgroundColor: "rgba(255,0,0,0.25)",
+                  backgroundColor: "black",
                   borderRadius: 20,
                   fontSize: 50,
                   padding: 15,
@@ -115,6 +137,13 @@ function Dashboard() {
             }
             title={"Revenue"}
             value={revenue}
+            backgroundStyle={{
+              background: "WHITE",
+              color: 'white',
+            }}
+            titleStyle={{
+              color: 'white',
+            }}
           />
         </Space>
         <Space>
@@ -126,12 +155,18 @@ function Dashboard() {
   );
 }
 
-function DashboardCard({ title, value, icon ,titleStyle}) {
+function DashboardCard({ title, value, icon, backgroundStyle, titleStyle }) {
   return (
-    <Card style={{ width: 250, height: 120 }}>
+    <Card
+      style={{
+        width: 250,
+        height: 120,
+        ...(backgroundStyle ? backgroundStyle : {}),
+      }}
+    >
       <Space direction="horizontal" size={30} style={{ fontSize: 50 }}>
         {icon}
-        <Statistic title={title} value={value} style={titleStyle}/>
+        <Statistic title={title} value={value} style={titleStyle} />
       </Space>
     </Card>
   );
@@ -174,18 +209,15 @@ function RecentOrders() {
         dataSource={dataSource}
         pagination={false}
         style={{
-          marginTop: '20px',
-          marginBottom: '20px',
-          borderRadius: '8px',
-          overflow: 'hidden'
+          marginTop: "20px",
+          marginBottom: "20px",
+          borderRadius: "8px",
+          overflow: "hidden",
         }}
       ></Table>
     </>
   );
 }
-
-
-
 
 function DashboardChart() {
   const [revenueData, setRevenueData] = useState({
@@ -208,7 +240,7 @@ function DashboardChart() {
           {
             label: "Revenue",
             data: data,
-            backgroundColor: "rgba(255, 0, 0, 1)",
+            backgroundColor: "black",
           },
         ],
       };
@@ -231,10 +263,9 @@ function DashboardChart() {
   };
 
   return (
-    <Card style={{ width: 560, height: 300 ,  marginTop: 20 , marginLeft: 38}}>
+    <Card style={{ width: 560, height: 300, marginTop: 20, marginLeft: 38 }}>
       <Bar options={options} data={revenueData} />
     </Card>
-    
   );
 }
 

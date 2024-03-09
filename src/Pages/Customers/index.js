@@ -16,8 +16,8 @@ function Customers() {
 
   return (
     <div style={{
-      background: ' linear-gradient(174.2deg,  rgba(255,244,228,1) 7.1%, rgba(240,246,238,1) 67.4%)', 
-      padding: '10px 100px 55px 45px',/* Top, Right, Bottom, Left padding */
+      background: ' white', 
+      padding: '10px 100px 35px 45px',/* Top, Right, Bottom, Left padding */
     }}>
     <Space size={20} direction="vertical">
       <Typography.Title level={4}>CUSTOMERS</Typography.Title>
@@ -68,7 +68,7 @@ function Customers() {
         }}
         style={{
           marginTop: '20px',
-          marginBottom: '10px',
+          marginBottom: '-10px',
           borderRadius: '8px',
           overflow: 'hidden',
           marginLeft: '160px'
