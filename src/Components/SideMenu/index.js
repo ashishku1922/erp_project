@@ -19,6 +19,7 @@ function SideMenu() {
   }, [location.pathname]);
 
   const navigate = useNavigate();
+
   return (
     <div
       className="SideMenu"
@@ -41,28 +42,28 @@ function SideMenu() {
         <Menu.Item
           key="/"
           icon={<AppstoreOutlined />}
-          style={{ marginTop: "1px", marginBottom: "12px", fontSize: "18px", color: 'white', backgroundColor: selectedKeys === "/" ? 'black' : 'transparent' }} // Change color to white
+          style={{ fontSize: "18px", color: "white", backgroundColor: selectedKeys === "/" ? "black" : "transparent" }} // Change color to white
         >
           Dashboard
         </Menu.Item>
         <Menu.Item
           key="/inventory"
           icon={<ShopOutlined />}
-          style={{ marginBottom: "12px", fontSize: "18px", color: 'white', backgroundColor: selectedKeys === "/inventory" ? 'black' : 'transparent' }} // Change color to white
+          style={{ fontSize: "18px", color: "white", backgroundColor: selectedKeys === "/inventory" ? "black" : "transparent" }} // Change color to white
         >
           Products
         </Menu.Item>
         <Menu.Item
           key="/orders"
           icon={<ShoppingCartOutlined />}
-          style={{ marginBottom: "12px", fontSize: "18px", color: 'white', backgroundColor: selectedKeys === "/orders" ? 'black' : 'transparent' }} // Change color to white
+          style={{ fontSize: "18px", color: "white", backgroundColor: selectedKeys === "/orders" ? "black" : "transparent" }} // Change color to white
         >
           Orders
         </Menu.Item>
         <Menu.Item
           key="/customers"
           icon={<UserOutlined />}
-          style={{ marginBottom: "12px", fontSize: "18px", color: 'white', backgroundColor: selectedKeys === "/customers" ? 'black' : 'transparent' }} // Change color to white
+          style={{ fontSize: "18px", color: "white", backgroundColor: selectedKeys === "/customers" ? "black" : "transparent" }} // Change color to white
         >
           Customers
         </Menu.Item>

@@ -15,8 +15,6 @@ function AppHeader() {
   return (
     <div className="AppHeader" style={{ 
       background: "#333333",
-
-
       display: 'flex',
       alignItems: 'center',
       justifyContent: 'center',
@@ -28,14 +26,16 @@ function AppHeader() {
         src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTezIql1STw8QKBs46ObvMwel87fo9lq_dbC7HIThnh1ADH9JviugqJQRFj9ohAWeL512E"
         alt="Logo"
         width={40}
+        style={{ margin: '0 10px' }} // Added margin
       />
-      <Typography.Title style={{ fontFamily: 'Montserrat', fontSize: '37px', margin: '0 20px', color: 'white' }}>
-  Admin Dashboard
-</Typography.Title>
-
-      
+      <Typography.Title style={{ fontFamily: 'Montserrat', fontSize: '24px', margin: '0 10px', color: 'white' }}>
+        Admin Dashboard
+      </Typography.Title>
+      {/* Optionally, you can add the BellFilled icon here */}
     </div>
   );
 }
 
 export default AppHeader;
+
+// Add the CSS code here

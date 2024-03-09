@@ -48,29 +48,32 @@ function CalendarView() {
   };
 
   return (
-    <div style={{ height: '500px', marginLeft: '320px' }}>
-      <h2>DELIVERY CALENDAR</h2>
-      <Calendar
-        localizer={localizer}
-        events={events}
-        startAccessor="start"
-        endAccessor="end"
-        eventPropGetter={(event, start, end, isSelected) => {
-          const style = {
-            backgroundColor: isSelected ? '#3174ad' : '#3a87ad',
-            color: 'white',
-          };
-          return { style };
-        }}
-        onSelectEvent={handleSelectEvent}
-        onSelectSlot={handleSelectSlot}
-      />
-      <div>
-        <ul>
-          {selectedDateOrders.map((order) => (
-            <li key={order.id}>{order.title}</li>
-          ))}
-        </ul>
+    <div style={{ maxWidth: '100%', overflowX: 'auto', padding: '0 20px', marginLeft:"300px" , marginRight:"300px" }}>
+      <div style={{ maxWidth: '800px', margin: '0 auto' }}>
+        <h2 style={{ textAlign: 'center' }}>DELIVERY CALENDAR</h2>
+        <Calendar
+          localizer={localizer}
+          events={events}
+          startAccessor="start"
+          endAccessor="end"
+          eventPropGetter={(event, start, end, isSelected) => {
+            const style = {
+              backgroundColor: isSelected ? '#3174ad' : '#3a87ad',
+              color: 'white',
+            };
+            return { style };
+          }}
+          onSelectEvent={handleSelectEvent}
+          onSelectSlot={handleSelectSlot}
+          style={{ height: 500 }} // Adjust the height of the calendar
+        />
+        <div>
+          <ul>
+            {selectedDateOrders.map((order) => (
+              <li key={order.id}>{order.title}</li>
+            ))}
+          </ul>
+        </div>
       </div>
     </div>
   );
