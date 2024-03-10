@@ -32,7 +32,7 @@ function SideMenu() {
         mode="vertical"
         style={{
           width: "100%",
-          background: "#333333", // Change background color to grey
+          background: "#333333",
         }}
         onClick={(item) => {
           navigate(item.key);
@@ -42,28 +42,28 @@ function SideMenu() {
         <Menu.Item
           key="/"
           icon={<AppstoreOutlined />}
-          style={{ fontSize: "18px", color: "white", backgroundColor: selectedKeys === "/" ? "black" : "transparent" }} // Change color to white
+          style={{ fontSize: "18px", color: "white", backgroundColor: selectedKeys === "/" ? "black" : "transparent" }} 
         >
           Dashboard
         </Menu.Item>
         <Menu.Item
           key="/inventory"
           icon={<ShopOutlined />}
-          style={{ fontSize: "18px", color: "white", backgroundColor: selectedKeys === "/inventory" ? "black" : "transparent" }} // Change color to white
+          style={{ fontSize: "18px", color: "white", backgroundColor: selectedKeys === "/inventory" ? "black" : "transparent" }} 
         >
           Products
         </Menu.Item>
         <Menu.Item
           key="/orders"
           icon={<ShoppingCartOutlined />}
-          style={{ fontSize: "18px", color: "white", backgroundColor: selectedKeys === "/orders" ? "black" : "transparent" }} // Change color to white
+          style={{ fontSize: "18px", color: "white", backgroundColor: selectedKeys === "/orders" ? "black" : "transparent" }} 
         >
           Orders
         </Menu.Item>
         <Menu.Item
           key="/customers"
           icon={<UserOutlined />}
-          style={{ fontSize: "18px", color: "white", backgroundColor: selectedKeys === "/customers" ? "black" : "transparent" }} // Change color to white
+          style={{ fontSize: "18px", color: "white", backgroundColor: selectedKeys === "/customers" ? "black" : "transparent" }} 
         >
           Customers
         </Menu.Item>

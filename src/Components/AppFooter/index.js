@@ -6,7 +6,7 @@ function AppFooter() {
       background: "#333333",
       padding: '10px 20px',
       color: 'white',
-      border: 'none',
+      borderTop: '1px solid white',
       display: 'flex',
       justifyContent: 'center',
       alignItems: 'center'

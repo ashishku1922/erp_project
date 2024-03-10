@@ -17,7 +17,7 @@ function Customers() {
   return (
     <div style={{
       background: ' white', 
-      padding: '10px 100px 35px 45px',/* Top, Right, Bottom, Left padding */
+      padding: '10px 100px 35px 45px',
     }}>
     <Space size={20} direction="vertical">
       <Typography.Title level={4}>CUSTOMERS</Typography.Title>

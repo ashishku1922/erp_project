@@ -30,7 +30,6 @@ function Inventory() {
   };
 
   const handleDeleteProduct = (productId) => {
-    // Implement logic to delete product from backend and update UI accordingly
     const newData = dataSource.filter((item) => item.id !== productId);
     setDataSource(newData);
   };
@@ -38,7 +37,6 @@ function Inventory() {
   const handleModalOk = () => {
     form.validateFields().then((values) => {
       setVisible(false);
-      // Implement logic to add or edit product based on selectedProduct state
       const newData = [...dataSource];
       if (selectedProduct) {
         const index = newData.findIndex((item) => item.id === selectedProduct.id);
@@ -60,7 +58,7 @@ function Inventory() {
   return (
     <div style={{
       background: "WHITE",
-      padding: '10px 40px 55px 40px', /* Adjusted left and right padding */
+      padding: '10px 40px 55px 40px', 
     }}>
       <Space size={20} direction="vertical">
         <Typography.Title level={4}>PRODUCTS</Typography.Title>
@@ -198,7 +196,6 @@ function Inventory() {
           >
             <Input />
           </Form.Item>
-          {/* Add more form fields as needed */}
         </Form>
       </Modal>
     </div>

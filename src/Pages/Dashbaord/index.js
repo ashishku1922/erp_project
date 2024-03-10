@@ -51,7 +51,7 @@ function Dashboard() {
     <div
       style={{
         background: "white",
-        padding: "10px 20px", // Adjust padding for responsiveness
+        padding: "10px 20px",
       }}
     >
       <Typography.Title
@@ -72,7 +72,7 @@ function Dashboard() {
             display: "flex",
             flexDirection: "row",
             justifyContent: "center",
-            flexWrap: "wrap", // Allow items to wrap to the next line on smaller screens
+            flexWrap: "wrap", 
           }}
         >
           <DashboardCard

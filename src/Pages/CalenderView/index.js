@@ -16,7 +16,7 @@ function CalendarView() {
         title: `Order#${order.id}`,
         start: generateDeliveryDate(index), // Generate delivery date based on index
         end: generateDeliveryDate(index), // Generate delivery date based on index
-        orderDetails: order, // Include the entire order details for each event
+        orderDetails: order, 
       }));
 
       setEvents(orders);
@@ -28,19 +28,16 @@ function CalendarView() {
     const currentDate = new Date();
     const year = currentDate.getFullYear();
     const month = currentDate.getMonth();
-    const day = currentDate.getDate() + index; // Increment day based on index
+    const day = currentDate.getDate() + index;
     return new Date(year, month, day);
   };
 
   const handleSelectEvent = (event) => {
     console.log('Selected event:', event);
-    // Handle displaying the details of the selected order (e.g., open a modal)
-    // You can access the order details using event.orderDetails
   };
 
   const handleSelectSlot = (slotInfo) => {
-    const selectedDate = slotInfo.start; // Get the selected date from the slot
-    // Filter orders for the selected date
+    const selectedDate = slotInfo.start; 
     const ordersForSelectedDate = events.filter((event) =>
       moment(event.start).isSame(selectedDate, 'day')
     );
@@ -65,7 +62,7 @@ function CalendarView() {
           }}
           onSelectEvent={handleSelectEvent}
           onSelectSlot={handleSelectSlot}
-          style={{ height: 500 }} // Adjust the height of the calendar
+          style={{ height: 500 }} 
         />
         <div>
           <ul>
