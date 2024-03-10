@@ -49,7 +49,7 @@ In conclusion, This Simplified ERP System built with React provides a user-frien
 
 This project showcases the power and versatility of React in developing modular and efficient web applications, making it an ideal choice for businesses seeking to streamline their operations. Whether you're a small startup or a large enterprise, this ERP system offers a solid foundation for managing essential business processes with ease.
 
-Thank you for considering this project, and we hope it serves as a valuable resource for your business needs.
+Thank you for considering this project,and we hope it serves as a valuable resource for your business needs.
 
 
 
