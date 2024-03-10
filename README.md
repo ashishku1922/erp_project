@@ -38,7 +38,7 @@ Open http://localhost:3000 to view it in the browser.
 ![Screenshot (16)](https://github.com/ashishku1922/erp_project/assets/110679234/6a7f1478-1b9e-4700-bafe-0a49c7afdf6b)
 
 ### 5)Orders Calender:
-->->Click on the "Orders Calender" button on the Dashboard to navigate to the Orders Management page.\
+->Click on the "Orders Calender" button on the Dashboard to navigate to the Orders Management page.\
 ->This feature provides a calendar view displaying orders based on their expected delivery dates.\
 ->Click on a date to view all orders due for delivery on that day.\
 \
