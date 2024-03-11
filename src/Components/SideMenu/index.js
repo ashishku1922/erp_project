@@ -72,7 +72,7 @@ function SideMenu() {
           icon={<CalendarOutlined />}
           style={{ marginBottom: "12px", fontSize: "18px" ,color: 'white',backgroundColor: selectedKeys === "/calenders" ? 'black' : 'transparent' }}
         >
-          Orders Calender
+          Orders Calendar
         </Menu.Item>
       </Menu>
     </div>
